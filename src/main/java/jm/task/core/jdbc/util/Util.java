@@ -1,5 +1,17 @@
 package jm.task.core.jdbc.util;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Util {
-    // реализуйте настройку соеденения с БД
+    //private final static  String url = "jdbc:mysql://localhost/store?serverTimezone=Europe/Moscow&useSSL=false";
+    private final static  String url = "jdbc:mysql://localhost:3306/JavaMentor?serverTimezone=Europe/Moscow&useSSL=false";
+    private final static  String username = "root";
+    private final static  String password = "5505Vfrc!";
+
+    public static Connection getConnection() throws SQLException{
+        return DriverManager.getConnection(url, username, password);
+    }
 }
+
