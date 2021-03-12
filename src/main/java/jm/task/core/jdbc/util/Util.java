@@ -10,7 +10,8 @@ public class Util {
     private final static  String username = "root";
     private final static  String password = "5505Vfrc!";
 
-    public static Connection getConnection() throws SQLException{
+    public static Connection getConnection() throws SQLException {
+        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         return DriverManager.getConnection(url, username, password);
     }
 }
