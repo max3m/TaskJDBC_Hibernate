@@ -9,17 +9,10 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
     Connection connection;
-
     String sqlCommand = null;
     Statement statement = null;
 
     public UserDaoJDBCImpl() {
-        try {
-            connection = Util.getConnection();
-            connection.setAutoCommit(false);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public void createUsersTable() {
