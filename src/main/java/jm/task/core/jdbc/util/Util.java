@@ -5,12 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
-    //private final static  String url = "jdbc:mysql://localhost/store?serverTimezone=Europe/Moscow&useSSL=false";
-    private final static  String url = "jdbc:mysql://localhost:3306/JavaMentor?serverTimezone=Europe/Moscow&useSSL=false";
-    private final static  String username = "root";
-    private final static  String password = "5505Vfrc!";
-
     public static Connection getConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/JavaMentor?serverTimezone=Europe/Moscow&useSSL=false";
+        String username = "root";
+        String password = "5505Vfrc!";
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         return DriverManager.getConnection(url, username, password);
     }
